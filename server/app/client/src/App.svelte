@@ -1,10 +1,18 @@
 <script>
-	export let name;
+    let random_number = -1;
+
+	fetch('http://localhost:5000/randint')
+		.then((response) => response.json())
+		.then((random) => {
+			console.log(random)
+			random_number = random.integer;
+	})
+	
+	
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1>{random_number}</h1>
 </main>
 
 <style>
