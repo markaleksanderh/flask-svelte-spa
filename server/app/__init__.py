@@ -25,5 +25,9 @@ def create_app():
     def random_integer():
         n = randint(0, 100)
         return jsonify({"integer": n})
+
+    @app.route('/randalpha')
+    def random_alpha():
+        pass
     
     return app
